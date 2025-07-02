@@ -1,9 +1,14 @@
 from django.contrib import admin
 from django.urls import path
-from . import views #period(.) represents current folder "myapp"
+from myapp import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.index, name='Home'),
-    path('starter/', views.starter, name='Start'),
+    path('', views.index, name='home'),
+    path('starter/', views.starter, name='starter'),
+    path('about/', views.about, name='about'),
+    path('services/', views.services, name='services'),
+    path('doctors/', views.doctors, name='doctors'),
+    path('appointment/', views.appointment, name='appointment'),
+    path('contact/', views.contact, name='contact'),
+    path('departments/', views.departments, name='departments'),
 ]
