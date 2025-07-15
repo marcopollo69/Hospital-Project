@@ -1,0 +1,50 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1 class="text-center">List of appointments</h1>
+
+    <table class="table table-info container">
+    <tr>
+        <th>name</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>datetime</th>
+        <th>department</th>
+        <th>doctor</th>
+        <th>message</th>
+        <th>action</th>
+
+    </tr>
+    {% for appointment in all %}
+    	        <tr>
+            <td>{{ appointment.name }}</td>
+            <td>{{ appointment.email }}</td>
+            <td>{{ appointment.phone }}</td>
+            <td>{{ appointment.datetime }}</td>
+            <td>{{ appointment.department }}</td>
+            <td>{{ appointment.doctor }}</td>
+            <td>{{ appointment.message }}</td>
+            <td>
+                <a href="/edit/{{ appointment.id }}" class="btn btn-outline-primary">edit</a>
+                <a href="/delete/{{ appointment.id }}" class="btn btn-outline-danger">delete</a>
+                <a href="{% url 'pay' %}" class="btn btn-outline-success">Pay</a>
+
+
+            </td>
+        </tr>
+    {% endfor %}
+
+    	
+
+    </table>
+
+
+
+
+
+
+
+
+{% endblock %}

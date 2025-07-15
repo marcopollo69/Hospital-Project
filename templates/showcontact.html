@@ -1,0 +1,52 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1 class="text-center">List of Contact</h1>
+
+       <table class="table table-info container">
+    <tr>
+        <th>name</th>
+        <th>email</th>
+        <th>message</th>
+        <th>contact</th>
+        <th>actions</th>
+
+    </tr>
+
+    {% for contact in all %}
+        <tr>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.message }}</td>
+            <td>{{ contact.contact }}</td>
+            <td>
+                <a href="" class="btn btn-outline-primary">edit</a>
+                <a href="/delete/{{ contact.id }}" class="btn btn-outline-danger">delete</a>
+
+
+            </td>
+        </tr>
+
+    {% endfor %}
+
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
